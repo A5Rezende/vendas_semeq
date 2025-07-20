@@ -20,13 +20,46 @@ Antes de começar, verifique se você tem instalado:
 1. **Clone o repositório:**
 
 ```bash
-git clone https://github.com/usuario/nome-do-projeto.git
-cd nome-do-projeto
+git clone https://github.com/A5Rezende/vendas_semeq.git
+cd vendas_semeq
 ```
 
-2. **Clone o repositório:**
+2. **Instale as dependências do projeto:**
 
 ```bash
-git clone https://github.com/usuario/nome-do-projeto.git
-cd nome-do-projeto
+pip install django 
+pip install django psycopg2
+```
+
+3. **Configure o banco de dados:**
+
+```bash
+Crie um banco de dados PostegreSQL
+
+Edite o arquivo settings.py com as informções do seu banco de dados:
+
+DB_NAME=seu_banco
+DB_USER=seu_usuario
+DB_PASSWORD=sua_senha
+DB_HOST=localhost
+DB_PORT=5432
+
+```
+
+4. **Rode as migrações para preparar o banco de dados:**
+
+```bash
+python manage.py migrate
+```
+
+5. **Carregue os dados iniciais (fixtures):**
+
+```bash
+python manage.py loaddata vendas/fixtures/dados_iniciais.json
+```
+
+6. **Inicie o servidor:**
+
+```bash
+python manage.py runserver
 ```
