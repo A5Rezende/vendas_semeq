@@ -1,4 +1,4 @@
-# 📦 Projeto Django - Nome do Projeto
+# 📦 Projeto Django - Sistema de Vendas Semeq
 
 Este é um sistema desenvolvido com Django, um framework web Python. Siga as instruções abaixo para rodar o projeto em sua máquina.
 
@@ -34,9 +34,9 @@ pip install django psycopg2
 3. **Configure o banco de dados:**
 
 ```bash
-Crie um banco de dados PostegreSQL
+Crie um banco de dados PostgreSQL
 
-Edite o arquivo settings.py com as informções do seu banco de dados:
+Edite o arquivo settings.py com as informações do seu banco de dados:
 
 DATABASES = {
     'default': {
@@ -67,4 +67,5 @@ python manage.py loaddata vendas/fixtures/dados_iniciais.json
 
 ```bash
 python manage.py runserver
+Acesse o sistema em: http://127.0.0.1:8000/
 ```
