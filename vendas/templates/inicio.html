@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <title>Inicio - Sistema Semeq</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="row mt-5" style="width: 100%;">
+            <div class="col-6">
+                <h1 class="text-center">Inicio</h1>
+            </div>
+            <div class="col-6 d-flex flex-column justify-content-center align-items-center">
+                <div class="row mb-2">
+                    <div class="col-12 d-flex justify-content-center align-items-center">
+                        <a href="{% url 'comprar' %}" class="btn btn-success me-3">Comprar</a>
+                        <a href="{% url 'logout' %}" class="btn btn-danger me-3">Sair</a>
+                        <a href="{% url 'consultar' %}" class="btn btn-primary">Consultar Produtos</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 d-flex justify-content-center align-items-center">
+                        <input type="text" class="form-control me-3" id="pesquisa_produto" name="pesquisa_produto" placeholder="Pesquisar Produto...">
+                        <button type="button" onclick="pesquisarProduto()" class="btn btn-primary">Pesquisar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-5" style="width: 100%;">
+            <h2 class="text-center mb-3">
+                Historico de Compras
+            </h2>
+
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Data da Compra</th>
+                        <th>Valor da Compra</th>
+                        <th>Produtos</th>
+                        <th>Fornecedores</th>
+                        <th>Numero</th>
+                        <th>Rua</th>
+                        <th>Cidade</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for venda in vendas %}
+                    <tr>
+                        <td>{{ venda.data }}</td>
+                        <td>{{ venda.valor_total }}</td>
+                        <td>
+                            {% for produto in venda.vendaproduto_set.all %}
+                            {{ produto.produto.nome }}<br>
+                            {% endfor %}
+                        </td>
+                        <td>
+                            {% for fornecedor in venda.vendafornecedor_set.all %}
+                            {{ fornecedor.fornecedor.nome }}<br>
+                            {% endfor %}
+                        </td>
+                        <td>{{ venda.numero }}</td>
+                        <td>{{ venda.rua }}</td>
+                        <td>{{ venda.cidade }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</body>
+
+</html>
+
+<script>
+
+    function pesquisarProduto() {
+        const pesquisa = document.getElementById('pesquisa_produto').value;
+        window.location.href = `/vendas/?pesquisa=${pesquisa}`; 
+    }
+
+</script>

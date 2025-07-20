@@ -1,0 +1,156 @@
+[
+  {
+    "model": "vendas.fornecedor",
+    "pk": 1,
+    "fields": {
+      "nome": "Fornecedor A",
+      "cnpj": "12345678000100"
+    }
+  },
+  {
+    "model": "vendas.fornecedor",
+    "pk": 2,
+    "fields": {
+      "nome": "Fornecedor B",
+      "cnpj": "23456789000100"
+    }
+  },
+  {
+    "model": "vendas.fornecedor",
+    "pk": 3,
+    "fields": {
+      "nome": "Fornecedor C",
+      "cnpj": "34567890000100"
+    }
+  },
+  {
+    "model": "vendas.fornecedor",
+    "pk": 4,
+    "fields": {
+      "nome": "Fornecedor D",
+      "cnpj": "45678901000100"
+    }
+  },
+  {
+    "model": "vendas.fornecedor",
+    "pk": 5,
+    "fields": {
+      "nome": "Fornecedor E",
+      "cnpj": "56789012000100"
+    }
+  },
+
+  {
+    "model": "vendas.produto",
+    "pk": 1,
+    "fields": {
+      "nome": "Notebook Gamer",
+      "preco_unitario": "3999.90"
+    }
+  },
+  {
+    "model": "vendas.produto",
+    "pk": 2,
+    "fields": {
+      "nome": "Mouse Sem Fio",
+      "preco_unitario": "89.90"
+    }
+  },
+  {
+    "model": "vendas.produto",
+    "pk": 3,
+    "fields": {
+      "nome": "Teclado Mecânico",
+      "preco_unitario": "199.90"
+    }
+  },
+  {
+    "model": "vendas.produto",
+    "pk": 4,
+    "fields": {
+      "nome": "Monitor Full HD",
+      "preco_unitario": "899.00"
+    }
+  },
+  {
+    "model": "vendas.produto",
+    "pk": 5,
+    "fields": {
+      "nome": "Webcam 1080p",
+      "preco_unitario": "299.90"
+    }
+  },
+
+  {
+    "model": "vendas.produtofornecedor",
+    "pk": 1,
+    "fields": {
+      "produto": 1,
+      "fornecedor": 1
+    }
+  },
+  {
+    "model": "vendas.produtofornecedor",
+    "pk": 2,
+    "fields": {
+      "produto": 1,
+      "fornecedor": 2
+    }
+  },
+  {
+    "model": "vendas.produtofornecedor",
+    "pk": 3,
+    "fields": {
+      "produto": 2,
+      "fornecedor": 3
+    }
+  },
+  {
+    "model": "vendas.produtofornecedor",
+    "pk": 4,
+    "fields": {
+      "produto": 2,
+      "fornecedor": 4
+    }
+  },
+  {
+    "model": "vendas.produtofornecedor",
+    "pk": 5,
+    "fields": {
+      "produto": 2,
+      "fornecedor": 1
+    }
+  },
+  {
+    "model": "vendas.produtofornecedor",
+    "pk": 6,
+    "fields": {
+      "produto": 3,
+      "fornecedor": 5
+    }
+  },
+  {
+    "model": "vendas.produtofornecedor",
+    "pk": 7,
+    "fields": {
+      "produto": 4,
+      "fornecedor": 2
+    }
+  },
+  {
+    "model": "vendas.produtofornecedor",
+    "pk": 8,
+    "fields": {
+      "produto": 4,
+      "fornecedor": 3
+    }
+  },
+  {
+    "model": "vendas.produtofornecedor",
+    "pk": 9,
+    "fields": {
+      "produto": 5,
+      "fornecedor": 4
+    }
+  }
+]

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <title>Consultar Produto - Sistema Semeq</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="row mt-5" style="width: 100%;">
+            <div class="col-6">
+                <h1 class="text-center">Consultar Produto</h1>
+            </div>
+            <div class="col-6 d-flex flex-column justify-content-center align-items-center">
+                <div class="row mb-2">
+                    <div class="col-12 d-flex justify-content-center align-items-center">
+                        <a href="{% url 'inicio' %}" class="btn btn-primary">Voltar ao Inicio</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 d-flex justify-content-center align-items-center">
+                        <input type="text" class="form-control me-3" id="pesquisa_produto" name="pesquisa_produto" placeholder="Pesquisar Produto...">
+                        <button type="button" onclick="pesquisarProduto()" class="btn btn-primary">Pesquisar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-5" style="width: 100%;">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Produto</th>
+                        <th>Preço</th>
+                        <th>Fornecedores</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for produto in produtos %}
+                    <tr>
+                        <td>{{ produto.nome }}</td>
+                        <td>{{ produto.preco_unitario }}</td>
+                        <td>
+                            {% for fornecedor in produto.produtofornecedor_set.all %}
+                            {{ fornecedor.fornecedor.nome }}<br>
+                            {% endfor %}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</body>
+
+</html>
+
+<script>
+
+    function pesquisarProduto() {
+        const pesquisa = document.getElementById('pesquisa_produto').value;
+        window.location.href = `/consultar/?pesquisa=${pesquisa}`; 
+    }
+
+</script>
