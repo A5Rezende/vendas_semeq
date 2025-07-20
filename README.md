@@ -9,7 +9,9 @@ Antes de começar, verifique se você tem instalado:
 - [Python 3.8+](https://www.python.org/downloads/)
 - [Git](https://git-scm.com/)
 - [pip](https://pip.pypa.io/en/stable/)
-- [postgreSQL]
+- [PostgreSQL](https://www.postgresql.org/download/)
+
+> **Obs:** Certifique-se de que o PostgreSQL esteja rodando e que você criou um banco de dados e um usuário com permissões.
 
 ---
 
@@ -20,29 +22,4 @@ Antes de começar, verifique se você tem instalado:
 ```bash
 git clone https://github.com/usuario/nome-do-projeto.git
 cd nome-do-projeto
-
-2. **Configure as dependencias:**
-
-```bash
-git clone https://github.com/usuario/nome-do-projeto.git
-cd nome-do-projeto
-
-3. **Rode as migrações para preparar o banco de dados:**
-
-```bash
-python manage.py migrate
-
-4. **Rode as os dados iniciais para preparar o banco de dados:**
-
-```bash
-python manage.py loaddata vendas/fixtures/dados_iniciais.json
-
-5. **Inicie o servidor:**
-
-```bash
-python manage.py runserver
-
-6. **Acesse o navegador:**
-
-```bash
-http://127.0.0.1:8000/
+```
