@@ -27,8 +27,7 @@ cd vendas_semeq
 2. **Instale as dependências do projeto:**
 
 ```bash
-pip install django 
-pip install django psycopg2
+pip install django psycopg2-binary
 ```
 
 3. **Configure o banco de dados:**
