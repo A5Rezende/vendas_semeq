@@ -23,3 +23,10 @@ Antes de começar, verifique se você tem instalado:
 git clone https://github.com/usuario/nome-do-projeto.git
 cd nome-do-projeto
 ```
+
+2. **Clone o repositório:**
+
+```bash
+git clone https://github.com/usuario/nome-do-projeto.git
+cd nome-do-projeto
+```
