@@ -38,11 +38,16 @@ Crie um banco de dados PostegreSQL
 
 Edite o arquivo settings.py com as informções do seu banco de dados:
 
-DB_NAME=seu_banco
-DB_USER=seu_usuario
-DB_PASSWORD=sua_senha
-DB_HOST=localhost
-DB_PORT=5432
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'seu_banco',
+        'USER': 'seu_usuario',
+        'PASSWORD': 'sua_senha',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
+}
 
 ```
 
